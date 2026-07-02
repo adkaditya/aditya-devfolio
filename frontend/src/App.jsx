@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Home from "./pages/Home";
+import ChatBot from "./components/chatbot/ChatBot";
 
 function App() {
    return  (
@@ -11,6 +12,7 @@ function App() {
     >
    
   <Home />
+  <ChatBot />
 
     </motion.div>
   );

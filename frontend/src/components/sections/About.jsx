@@ -1,171 +1,553 @@
 import { motion } from "framer-motion";
-import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaGithub,
-} from "react-icons/fa";
-import { SiExpress, SiTailwindcss } from "react-icons/si";
 
-const stats = [
-  {
-    number: "01+",
-    title: "Years Experience",
-  },
-  {
-    number: "15+",
-    title: "Projects Completed",
-  },
-  {
-    number: "20+",
-    title: "Technologies",
-  },
-  {
-    number: "100%",
-    title: "Passion",
-  },
-];
+import {
+  Brain,
+  Sparkles,
+  Rocket,
+  Code2,
+} from "lucide-react";
+
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card";
+
+import { Badge } from "@/components/ui/badge";
+
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-slate-950 py-28 text-white"
+      className="relative overflow-hidden bg-[#020817] py-32 text-white"
     >
-      {/* Background */}
+      {/* ================= Background ================= */}
 
-      <div className="absolute left-20 top-20 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div className="absolute inset-0">
 
-      <div className="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl"></div>
+        {/* Grid */}
 
-      <div className="mx-auto max-w-7xl px-6">
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `
+            linear-gradient(#ffffff 1px,transparent 1px),
+            linear-gradient(90deg,#ffffff 1px,transparent 1px)
+            `,
+            backgroundSize: "50px 50px",
+          }}
+        />
+
+        {/* Glow */}
+
+        <div className="absolute -left-32 top-10 h-[420px] w-[420px] rounded-full bg-cyan-500/20 blur-[120px]" />
+
+        <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-blue-600/20 blur-[120px]" />
+
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+        {/* Heading */}
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mb-20 text-center"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: .8,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center"
         >
 
-          <p className="mb-4 text-blue-400">
-            Get To Know Me
-          </p>
+          <Badge className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-cyan-300">
 
-          <h2 className="text-6xl font-black tracking-tight">
-            About Me
+            ABOUT ME
+
+          </Badge>
+
+          <h2 className="mt-8 text-5xl font-black md:text-7xl">
+
+            Building
+
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+
+              {" "}AI Powered
+
+            </span>
+
+            <br />
+
+            Digital Experiences
+
           </h2>
+
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-400">
+
+            Passionate MERN Stack Developer currently
+            exploring
+
+            <span className="font-semibold text-cyan-400">
+
+              {" "}Generative AI
+
+            </span>
+
+            ,
+
+            <span className="font-semibold text-cyan-400">
+
+              {" "}Agentic AI
+
+            </span>
+
+            {" "}and intelligent software systems.
+
+          </p>
 
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        {/* Main Grid */}
 
-          {/* Left */}
+        <div className="mt-24 grid items-center gap-16 lg:grid-cols-2">
+                    {/* ================= LEFT SIDE ================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-xl"
+            initial={{
+              opacity: 0,
+              x: -80,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="relative flex h-[650px] items-center justify-center"
           >
 
-            <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-6xl font-bold">
+            {/* Background Glow */}
 
-              AK
+            <div className="absolute h-[450px] w-[450px] rounded-full bg-cyan-500/20 blur-[120px]" />
 
-            </div>
+            {/* Outer Ring */}
 
-            <h3 className="mt-8 text-center text-3xl font-bold">
+            <motion.div
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute h-[420px] w-[420px] rounded-full border border-cyan-500/20"
+            />
 
-              Full Stack MERN Developer
+            {/* Middle Ring */}
 
-            </h3>
+            <motion.div
+              animate={{
+                rotate: -360,
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="absolute h-[320px] w-[320px] rounded-full border border-blue-500/20"
+            />
 
-            <p className="mt-6 text-center leading-8 text-slate-400">
+            {/* Inner Ring */}
 
-              Passionate developer focused on creating
-              scalable applications and beautiful user
-              experiences using modern technologies.
+            <motion.div
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+              className="absolute h-[240px] w-[240px] rounded-full border border-cyan-400/30"
+            />
 
-            </p>
+            {/* AI Core */}
 
-            <div className="mt-10 flex flex-wrap justify-center gap-5 text-4xl">
+            <motion.div
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+              className="relative z-20 flex h-44 w-44 items-center justify-center rounded-full border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-[0_0_80px_rgba(34,211,238,.35)]"
+            >
 
-              <FaReact className="text-cyan-400" />
+              <Brain
+                size={80}
+                className="text-cyan-400"
+              />
 
-              <FaNodeJs className="text-green-500" />
+            </motion.div>
 
-              <SiExpress />
+            {/* Floating Card 1 */}
 
-              <FaDatabase className="text-green-400" />
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="absolute left-4 top-20"
+            >
 
-              <SiTailwindcss className="text-sky-400" />
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
 
-              <FaGithub />
+                <CardContent className="flex items-center gap-3 p-5">
 
-            </div>
+                  <Code2 className="text-cyan-400" />
+
+                  <div>
+
+                    <h4 className="font-semibold">
+                      MERN Stack
+                    </h4>
+
+                    <p className="text-xs text-slate-400">
+                      Full Stack Development
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+            </motion.div>
+
+            {/* Floating Card 2 */}
+
+            <motion.div
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="absolute right-4 top-32"
+            >
+
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
+
+                <CardContent className="flex items-center gap-3 p-5">
+
+                  <Brain className="text-cyan-400" />
+
+                  <div>
+
+                    <h4 className="font-semibold">
+                      Generative AI
+                    </h4>
+
+                    <p className="text-xs text-slate-400">
+                      Learning
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+            </motion.div>
+                        {/* Floating Card 3 */}
+
+            <motion.div
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+              }}
+              className="absolute bottom-28 left-8"
+            >
+
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
+
+                <CardContent className="flex items-center gap-3 p-5">
+
+                  <Rocket className="text-cyan-400" />
+
+                  <div>
+
+                    <h4 className="font-semibold">
+                      Agentic AI
+                    </h4>
+
+                    <p className="text-xs text-slate-400">
+                      Exploring AI Agents
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+            </motion.div>
+
+            {/* Floating Card 4 */}
+
+            <motion.div
+              animate={{
+                y: [0, 12, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+              className="absolute bottom-16 right-4"
+            >
+
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
+
+                <CardContent className="flex items-center gap-3 p-5">
+
+                  <Sparkles className="text-cyan-400" />
+
+                  <div>
+
+                    <h4 className="font-semibold">
+                      Future Ready
+                    </h4>
+
+                    <p className="text-xs text-slate-400">
+                      Always Learning
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+            </motion.div>
 
           </motion.div>
 
-          {/* Right */}
+          {/* ================= RIGHT SIDE ================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              x: 80,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            viewport={{
+              once: true,
+            }}
           >
 
-            <div className="grid grid-cols-2 gap-6">
+            <Badge className="border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
 
-              {stats.map((item) => (
+              🚀 Full Stack Developer
 
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-blue-500"
-                >
+            </Badge>
 
-                  <h2 className="text-5xl font-black text-blue-400">
+            <h3 className="mt-6 text-5xl font-black leading-tight">
 
-                    {item.number}
+              Passionate About
 
-                  </h2>
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
 
-                  <p className="mt-3 text-slate-400">
+                {" "}Modern Development
 
-                    {item.title}
+              </span>
 
-                  </p>
+            </h3>
 
-                </div>
+            <p className="mt-8 text-lg leading-9 text-slate-400">
 
-              ))}
+              I'm a passionate Full Stack MERN Developer who
+              enjoys building scalable web applications,
+              beautiful user interfaces and AI-powered
+              solutions.
+
+              My current learning journey focuses on
+
+              <span className="font-semibold text-cyan-400">
+
+                {" "}Generative AI
+
+              </span>
+
+              ,
+
+              <span className="font-semibold text-cyan-400">
+
+                {" "}Agentic AI
+
+              </span>
+
+              , AI Agents, LangChain, RAG and intelligent
+              automation.
+
+            </p>
+
+            {/* Timeline */}
+
+            <div className="mt-10 space-y-5">
+                            {/* Timeline Item */}
+
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
+
+                <CardContent className="flex gap-5 p-5">
+
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/20 font-bold text-cyan-400">
+
+                    2023
+
+                  </div>
+
+                  <div>
+
+                    <h4 className="font-semibold text-white">
+
+                      Started Programming Journey
+
+                    </h4>
+
+                    <p className="mt-2 text-slate-400">
+
+                      Started with C, C++, Java and learned
+                      programming fundamentals.
+
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
+
+                <CardContent className="flex gap-5 p-5">
+
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/20 font-bold text-cyan-400">
+
+                    2024
+
+                  </div>
+
+                  <div>
+
+                    <h4 className="font-semibold text-white">
+
+                      MERN Stack Development
+
+                    </h4>
+
+                    <p className="mt-2 text-slate-400">
+
+                      Built multiple full-stack projects using
+                      React, Node.js, Express and MongoDB.
+
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
+
+              <Card className="border-white/10 bg-white/5 backdrop-blur-xl">
+
+                <CardContent className="flex gap-5 p-5">
+
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/20 font-bold text-cyan-400">
+
+                    2025
+
+                  </div>
+
+                  <div>
+
+                    <h4 className="font-semibold text-white">
+
+                      AI Learning Journey
+
+                    </h4>
+
+                    <p className="mt-2 text-slate-400">
+
+                      Learning Generative AI, Agentic AI,
+                      LangChain, RAG and AI Agents.
+
+                    </p>
+
+                  </div>
+
+                </CardContent>
+
+              </Card>
 
             </div>
 
-            <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            {/* Buttons */}
 
-              <h3 className="text-2xl font-bold">
+            <div className="mt-10 flex flex-wrap gap-4">
 
-                Developer Philosophy
-
-              </h3>
-
-              <p className="mt-5 leading-8 text-slate-400">
-
-                I enjoy transforming ideas into modern,
-                responsive and scalable web applications.
-                My goal is to create products that are
-                beautiful, performant and user-friendly.
-
-              </p>
-
-              <button className="mt-8 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 font-semibold transition hover:scale-105">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600"
+              >
 
                 Download Resume
 
-              </button>
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+              >
+
+                GitHub
+
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+              >
+
+                LinkedIn
+
+              </Button>
 
             </div>
 
@@ -174,8 +556,11 @@ const About = () => {
         </div>
 
       </div>
+
     </section>
+
   );
 };
 
 export default About;
+            
